@@ -58,8 +58,20 @@
 							<input type="text" name="place" ng-model="newEventPlace1" placeholder="lieu" class="col-lg-12">
 							<textarea name="description" ng-model="newEventDescription1" placeholder="description" class="col-lg-12"></textarea>
 							<label class="col-lg-5">Pendant</label><input type="number" name="duree" ng-model="newEventLength1" class="col-lg-4" min="1" max="24"><span class="col-lg-2">heure(s)</span>
-							<div class="btn btn-success" style="float: left" ng-click="addEventFromModal(tel1)">Valider</div>
-							<div class="btn btn-danger" style="float: right" ng-click="abortEventFromModal(tel1)">Annuler</div>
+							<div class="btn btn-success" style="float: left" ng-click="addEventFromModal('tel1')">Valider</div>
+							<div class="btn btn-danger" style="float: right" ng-click="abortEventFromModal('tel1')">Annuler</div>
+						</div>
+					</div>
+
+					<div class="modal-container modal-new-event-commun" id="modal1">
+						<div class="modal-content">
+							<span class="h3">Ajouter un évènement</span>
+							<input type="text" name="title" ng-model="newEventTitle1" placeholder="nom" class="col-lg-12">
+							<input type="text" name="place" ng-model="newEventPlace1" placeholder="lieu" class="col-lg-12">
+							<textarea name="description" ng-model="newEventDescription1" placeholder="description" class="col-lg-12"></textarea>
+							<label class="col-lg-5">Pendant</label><input type="number" name="duree" ng-model="newEventLength1" class="col-lg-4" min="1" max="24"><span class="col-lg-2">heure(s)</span>
+							<div class="btn btn-success" style="float: left" ng-click="addEventCommun('tel1')">Valider</div>
+							<div class="btn btn-danger" style="float: right" ng-click="abortEventFromModal('tel1')">Annuler</div>
 						</div>
 					</div>
 

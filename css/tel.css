@@ -81,12 +81,12 @@
 	margin-top: -20px;
 }
 
-.modal-new-event .modal-content {
+.modal-new-event .modal-content, .modal-new-event-commun .modal-content {
 	height:240px;
 	top:200px;
 }
 
-.modal-new-event .modal-content .btn {
+.modal-new-event .modal-content .btn, .modal-new-event-commun .modal-content .btn {
 	margin-top: 15px;
 }
 

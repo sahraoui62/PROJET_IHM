@@ -112,7 +112,7 @@ angular.module('telModule',[]).controller('telCtrl', ['$scope',function ($scope)
 		.click(function(){$scope.formAddEvent(telId)})
 		.appendTo(aux);
 		$("<div>",{class:"btn btn-default btn-add-event-commun",text:"Ajouter un évènement"})
-		.click(function(){$scope.addEventCommun(telId)})
+		.click(function(){$scope.displayModalCommun(telId)})
 		.css("display","none")
 		.appendTo(aux);
 		aux.appendTo(telContent);
@@ -198,14 +198,12 @@ angular.module('telModule',[]).controller('telCtrl', ['$scope',function ($scope)
 			text               : evnmt["titre"]
 		}).css("height",(evnmt["duree"]*45)+"px");
 
-		console.log(evnmt_div);
 		cell.attr("rowspan",evnmt["duree"]);
 		cell.attr("data-occupee","true");
 		evnmt_div.appendTo(cell);
 		for (var i=1; i< evnmt["duree"]; i++) {
 			var heure = parseInt(evnmt["heure"])+i;
 			var dheure = heure>=10 ? ""+heure : "0"+heure;
-			console.log(dheure);
 			$("#"+telId+" td[data-jour='"+evnmt["jour"]+"'][data-heure='"+dheure+"']").addClass("hidden");
 		}
 	}	
@@ -313,7 +311,7 @@ angular.module('telModule',[]).controller('telCtrl', ['$scope',function ($scope)
 			source.find(".notification.notification-action").css("display","none");
 			cible.find(".notification.notification-action").css("display","none");
 			$scope.afficherCreneauxEnCommun();
-		},"0");
+		},"1500");
 	}
 
 	$scope.afficherCreneauxEnCommun = function() {
@@ -348,16 +346,38 @@ angular.module('telModule',[]).controller('telCtrl', ['$scope',function ($scope)
 	}
 
 	$scope.addEventCommun = function(telId) {
+		var tel1 = $("#tel1");
+		var tel2 = $("#tel2");
+
+		$("#"+telId).find(".modal-container.modal-new-event-commun").css("display","none");
+		$("#"+telId).find("tbody").removeClass("collapsed");
 		var jour = $scope.selectedCell[telId].attr("data-jour");
 		var heure = $scope.selectedCell[telId].attr("data-heure");
-		console.log($scope.selectedCell[telId]);
-		var duree = 3;
-		var titre = "toto";
-		var lieu = "lieu";
-		var description = "description";
+		console.log(telId);
+		var titre = $scope.newEventTitle1;
+		var lieu = $scope.newEventPlace1;
+		var description = $scope.newEventDescription1;
+		var duree = $scope.newEventLength1;
 		$scope.addEventWithoutSelectedCell("tel1",jour,heure,duree,lieu,titre,description);
 		$scope.addEventWithoutSelectedCell("tel2",jour,heure,duree,lieu,titre,description);
-		
+
+		for (var i=0; i< 24; i++) {
+			var heure = (i>=10) ? ""+i : "0"+i;
+			for (var j=0; j<$scope.jours.length; j++) {
+				var jour = j;
+				var cellTel1 = tel1.find("td[data-jour='"+jour+"'][data-heure='"+heure+"']");
+				var cellTel2 = tel2.find("td[data-jour='"+jour+"'][data-heure='"+heure+"']");
+
+
+				cellTel1.removeClass("commune commune-proposition commune-attente commune-validee");
+			 	cellTel2.removeClass("commune commune-proposition commune-attente commune-validee");
+			}
+		}
+
+	}
+
+	$scope.displayModalCommun = function(telId) {
+		$("#"+telId).find(".modal-container.modal-new-event-commun").css("display","block");
 	}
 
 
