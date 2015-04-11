@@ -1,0 +1,66 @@
+.calendrier.semaine td{
+	width:45px;
+}
+
+.calendrier.semaine thead {
+	display: block;
+	border-bottom: solid 1px black;
+	font-size:10px;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: bottom;
+	text-align: center;
+}
+
+.calendrier.semaine tbody {
+	display: block;
+	width: 372px;
+	overflow-y: auto;
+	height: 540px;
+}
+
+.calendrier.semaine tbody td {
+	width:45px;
+	height: 45px;
+	vertical-align: top;
+	border-right: solid 1px lightgrey;
+}
+
+.calendrier.semaine tbody tr {
+	border-bottom: dotted 1px lightgrey;
+}
+
+.calendrier.semaine tbody td:first-child {
+	vertical-align: middle;
+	text-align: center;
+	background-color: #f5f5f5;
+}
+
+.calendrier.semaine tbody.collapsed {
+	height:300px !important;
+	border-bottom: solid 1px black;
+}
+
+.calendrier.semaine tbody td.selected {
+	box-shadow: 0px 0px 3px orange inset;
+}
+
+.calendrier.semaine td.hidden {
+	visibility: hidden;
+}
+
+td.commune.commune-proposition {
+	/*background-color: lightblue;*/
+	/*box-shadow: 0px 0px 5px blue inset;*/
+	background-color: #85FFFF;
+}
+
+td.commune.commune-attente {
+	/*background-color: yellow;*/
+	box-shadow: 0px 0px 5px orange inset;
+}
+
+td.commune.commune-validee {
+	/*background-color: lightgreen;*/
+	box-shadow: 0px 0px 5px green inset;
+}

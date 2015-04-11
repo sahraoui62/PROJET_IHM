@@ -1,0 +1,16 @@
+.rdv {
+	background-color: #ddd;
+	height:135px;
+}
+
+.rdv.bleu {
+	box-shadow : -3px 0 0px #55f inset;
+}
+
+.rdv.vert {
+	box-shadow : -3px -3px 0px #0e0 inset;
+}
+
+.rdv.rouge {
+	box-shadow : -3px 0 0px #f55 inset;
+}

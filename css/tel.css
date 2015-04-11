@@ -1,0 +1,136 @@
+.tel h2 {
+	text-align: center;
+}
+
+#tel1, #tel2 {
+	height: 640px;
+	width: 360px;
+	margin: auto;
+	border: solid 1px black;
+}
+
+.telheader {
+	height:25px;
+	background-color: #000;
+	color: white;
+	text-align: right;
+	line-height: 25px;
+	font-weight: bold;
+	padding:0 5px 0 5px;
+}
+.telfooter {
+	height:25px;
+	background-color: #000;
+	color: white;
+	text-align: center;
+	line-height: 25px;
+}
+.telcontent {
+	height: 590px;
+	overflow: hidden;
+}
+
+.modal-container {
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	height:640px;
+	width:360px;
+	display: none;
+}
+
+.modal-content {
+	position: absolute;
+	top:230px;
+	left:50px;
+	height:180px;
+	width:260px;
+	border-radius:5px;
+	background-color: #fff;
+	padding: 10px;
+}
+
+.bottom-menu {
+	position: absolute;
+	height: 200px;
+	width: 150px;
+	background-color: black;
+	left: 258px;
+	bottom: 25px;
+	display:none;
+}
+
+.bottom-menu.visible {
+	display: block;
+}
+
+
+.icon-menu:hover {
+	color: #5555ff;
+	cursor: pointer;
+}
+
+.aux {
+	height: 240px;
+}
+
+.close-aux {
+	background-color: red;
+	height:30px;
+	width: 30px;
+	float:right;
+	margin-top: -20px;
+}
+
+.modal-new-event .modal-content {
+	height:240px;
+	top:200px;
+}
+
+.modal-new-event .modal-content .btn {
+	margin-top: 15px;
+}
+
+.item-bottom-menu {
+	border-bottom: solid 1px grey;
+	color: white;
+}
+
+.devicesList {
+	margin-top: 5px;
+	height: 95px;
+}
+
+.deviceItem {
+	height: 35px;
+	border-top : solid 1px silver;
+	border-bottom: solid 1px silver;
+	line-height: 35px;
+}
+
+.notification {
+	position: absolute;
+	width : 170px;
+	height: 30px;
+	border: solid 1px black;
+	background-color: #fff;
+	top: 65px;
+	right: 49px;
+	line-height: 30px;
+	padding: 0;
+	font-weight: bold;
+	padding-left: 15px;
+	display: none
+}
+
+.notification.notification-action {
+	width : 200px;
+}
+
+.icon-spin {
+	-webkit-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
